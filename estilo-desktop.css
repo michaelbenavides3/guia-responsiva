@@ -1,0 +1,98 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* esilos generales para el body */
+body{
+  background-color: lightslategray;
+}
+/* estilos generales para el menu principal */
+.menu{
+  background-color: #333;
+  padding: 16px;
+  list-style: none; /*quita los items*/
+}
+/* estilos generales para menu de navegacion */
+.menu li{
+  display: inline-block;
+  margin: 2rem;
+  color: white;
+  cursor: pointer;
+}
+/* estilos para los elementos h1 */
+h1{
+  padding: 16px;
+  color: chartreuse;
+  text-align: center;
+}
+
+/* esilo para las cajas1,2 */
+
+.caja1, .caja2{
+  width: 80%; /*ancho del contenedor*/
+  margin: 2rem auto; /*centrado horizontal y margen vertical*/
+  overflow: hidden;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+.caja1 h1, .caja2 p{
+  width: 60%;
+  float: left;
+}
+
+.caja2 p{
+  margin-top: 30px;
+  text-align: center;
+  
+}
+
+.caja1 img .caja2 img{
+  width: 35px;
+  float: right;
+  border-radius: 8px;
+}
+
+.caja2, .imagen{
+  padding-top: 10px;
+}
+
+
+
+.imagen{
+  width: 20%;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  /* Mostrar las cajas una al lado de la otra */
+  .caja1, .caja2 {
+    width: 45%;
+    float: left;
+    margin: 1rem 2.5%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  /* Internamente, apilar texto e imagen dentro de cada caja */
+  .caja1 h1, .caja2 p,
+  .caja1 img, .caja2 img {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .caja1 img, .caja2 img {
+    margin-top: 1rem;
+  }
+  p .caja2{
+    margin-bottom: 150px;
+  }
+}

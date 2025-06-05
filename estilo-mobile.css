@@ -1,34 +1,38 @@
 /* selector univeral */
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 /* formar al body */
-body{
-  font-family: 'Times New Roman', Times, serif;
+body {
+  font-family: "Times New Roman", Times, serif;
   margin: 0;
   padding: 20px;
   background-color: grey;
   text-align: center;
 }
 /* color de texto para h1 y h2 */
-h1, h2{
+h1,
+h2 {
   color: white;
 }
 /* variable para el borde-radius */
-:root{
-  --border-radius:5px;
+:root {
+  --border-radius: 5px;
 }
 
-.contenedor{
+.contenedor {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 /* estilos para caja1 */
-.caja1{
+.caja1 {
+  width: 200px;
+  height: 200px;
   margin-top: 15px;
   background-color: aqua;
   color: white;
@@ -38,7 +42,9 @@ h1, h2{
   border: solid 3px black;
 }
 /* estilos caja2 */
-.caja2{
+.caja2 {
+  width: 200px;
+  height: 200px;
   margin-top: 15px;
   background-color: crimson;
   color: palegoldenrod;
@@ -48,7 +54,9 @@ h1, h2{
   border: solid 3px black;
 }
 /* estilos caja 3 */
-.caja3{
+.caja3 {
+  width: 200px;
+  height: 200px;
   margin-top: 15px;
   background-color: palevioletred;
   color: orange;
@@ -58,24 +66,26 @@ h1, h2{
   border: solid 3px black;
 }
 
-.imagen{
+.imagen {
   width: 100%;
   border-radius: var(--border-radius);
   border: solid;
 }
 /* diseño en fila en pantalla mas grande */
-@media (min-width: 666px){
-  body{
+@media (min-width: 666px) {
+  body {
     background-color: slategray;
   }
-  .contenedor{
+  .contenedor {
     flex-direction: row; /*alinear en fila*/
+    display: flex;
+
     justify-content: center; /*centrar elementos*/
   }
-  .caja1, .caja2, .caja3{
+  .caja1,
+  .caja2,
+  .caja3 {
     width: 30%;
     margin-left: 20px;
   }
-  
 }
-
