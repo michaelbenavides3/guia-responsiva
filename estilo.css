@@ -1,0 +1,51 @@
+/* estilos generales, con selector universal */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* estilos definidos para body */
+body{
+  background-color: dodgerblue;
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* 1. Crea una página HTML con diseño adaptativo que cambie de color de fondo
+usando media queries. */
+/* cambio a lightgreen, si la pantalla esta por encima de los 600px */
+@media (min-width: 600px){
+  body{
+    background-color: lightgreen;
+  }
+  }
+
+/* 2. Define al menos tres breakpoints comunes (ej. 768px, 992px, 1200px). Y cambia la
+disposición de un elemento */
+/* (1breakpoint) cambio de color de fonde de h1 a criwson despues de los, y cambia el tamaño de la letra 768px */
+@media (min-width: 768px){
+  h1{
+    font-size: 3em; /*aumenta el tamaño del titulo*/
+    background-color: crimson; /*cambia el tamaño del titulo*/
+  }
+}
+
+/* (2breakpoint) vamos a linear la p a la izquierda y cambiar de color, despues de 992px */
+@media (min-width: 992px){
+  p{
+    text-align: left; /*la P se alineara a la izquierda*/
+    color: orangered; /*cambiara de color a rojo*/
+    font-weight: bold; /*se tornara mas gruesa la letra*/
+  }
+}
+
+/* (3. breakpoint) se cambiara el color del body, despues de los 1200px */
+@media(min-width: 1200px){
+  body{
+    background-color: lightskyblue; /*cambiara el fondo de color.*/
+  }
+}
+
+/* 3. Implementa una estrategia “mobile first” en un proyecto simple. */
