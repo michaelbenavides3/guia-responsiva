@@ -1,24 +1,52 @@
+/* estilos dados por selector universal */
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /*elimina margenes prederteminadas*/
+  padding: 0; /*elimina rellenos prederteminados*/
+  box-sizing: border-box; /*hace que el padding y el margin no aumenten*/
 }
 /* esilos generales para el body */
 body{
   background-color: lightslategray;
 }
-/* estilos generales para el menu principal */
-.menu{
+/* Contenedor de navegación */
+.navbar {
   background-color: #333;
-  padding: 16px;
-  list-style: none; /*quita los items*/
+  position: relative; /* Posición relativa para colocar el botón hamburguesa */
 }
-/* estilos generales para menu de navegacion */
-.menu li{
-  display: inline-block;
-  margin: 2rem;
+
+/* Ícono hamburguesa */
+.menu-icon {
+  font-size: 30px; /*tamaño grande del icono*/
   color: white;
-  cursor: pointer;
+  padding: 15px 20px; /*espacion internos*/
+  display: none; /* Oculto por defecto (solo se ve en móvil) */
+  cursor: pointer; /*cursor en forma de mano*/
+}
+
+/* Menú (lista) por defecto: horizontal */
+.menu {
+  list-style: none; /*elimina los puntos de la lista*/
+  display: flex; /*los elementos se acomoda horizontalmente*/
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
+
+.menu li a {
+  display: block; /*enlace ocupa todo el area disponible*/
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  background-color: #555;
+}
+
+/* Oculta el checkbox */
+#menu-toggle {
+  display: none; /*no se muestra el input de tipo checkbox*/
 }
 /* estilos para los elementos h1 */
 h1{
@@ -32,7 +60,7 @@ h1{
 .caja1, .caja2{
   width: 80%; /*ancho del contenedor*/
   margin: 2rem auto; /*centrado horizontal y margen vertical*/
-  overflow: hidden;
+  overflow: hidden; /*oculta contenido desbordado*/
   background-color: #f9f9f9;
   padding: 1rem;
   border: 1px solid black;
@@ -40,7 +68,7 @@ h1{
 
 .caja1 h1, .caja2 p{
   width: 60%;
-  float: left;
+  float: left; /*flota a la izquierda*/
 }
 
 .caja2 p{
@@ -65,18 +93,18 @@ h1{
   width: 20%;
   align-items: center;
 }
-
+/*media query; telefonos pequeños*/
 @media (max-width: 480px) {
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /*reduce el tamaño del texto*/
     text-align: center;
   }
 
   /* Mostrar las cajas una al lado de la otra */
   .caja1, .caja2 {
-    width: 45%;
-    float: left;
-    margin: 1rem 2.5%;
+    width: 45%; /*mitad del ancho*/
+    float: left; /*una al lado de la otra*/
+    margin: 1rem 2.5%; /*separacion horizontal*/
     padding: 1.5rem;
     box-sizing: border-box;
   }
@@ -84,8 +112,8 @@ h1{
   /* Internamente, apilar texto e imagen dentro de cada caja */
   .caja1 h1, .caja2 p,
   .caja1 img, .caja2 img {
-    float: none;
-    width: 100%;
+    float: none; /*quita lo que esta flotando*/
+    width: 100%; /*ocupa todo el ancho*/
     text-align: center;
   }
 
@@ -94,5 +122,29 @@ h1{
   }
   p .caja2{
     margin-bottom: 150px;
+  }
+}
+/*media query, para celulares*/
+@media screen and (max-width: 780px) {
+
+  /* Muestra el botón hamburguesa */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Menú en columna, oculto al inicio */
+  .menu {
+    display: none;
+    flex-direction: column; /*aplica verticalmente*/
+    width: 100%;
+  }
+
+  /* Cuando el checkbox está activado (clic en menú), muestra la lista */
+  #menu-toggle:checked + .menu-icon + .menu {
+    display: flex;
+  }
+
+  .menu li a {
+    border-bottom: 1px solid #444; /*linea divisoria*/
   }
 }
